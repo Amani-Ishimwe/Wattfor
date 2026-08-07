@@ -27,8 +27,8 @@ export default function Navigation({ onCtaClick }: NavigationProps) {
 
   const navLinks = [
     { name: "Services", href: "#services" },
+    { name: "Portfolio", href: "#portfolio" },
     { name: "Specs", href: "#specs" },
-    { name: "Blueprints", href: "#blueprints" },
     { name: "Pricing", href: "#pricing" },
     { name: "Reviews", href: "#reviews" },
     { name: "FAQ", href: "#faq" },
@@ -71,7 +71,7 @@ export default function Navigation({ onCtaClick }: NavigationProps) {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
             <Button onClick={onCtaClick} variant="primary" className="py-2 px-5">
-              Get My Free Sample
+              Contact Us
             </Button>
           </div>
 
@@ -133,11 +133,11 @@ export default function Navigation({ onCtaClick }: NavigationProps) {
                   variant="primary"
                   className="w-full flex items-center justify-center space-x-2"
                 >
-                  <span>Get My Free Sample</span>
+                  <span>Contact Us</span>
                   <ArrowRight className="w-4 h-4" />
                 </Button>
                 <p className="text-[9px] font-mono text-center text-brand-slate uppercase tracking-widest font-bold">
-                  Live in 7 days · $0 upfront
+                  No lock-in terms · Billed month-to-month
                 </p>
               </div>
             </motion.div>

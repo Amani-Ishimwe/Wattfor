@@ -41,7 +41,7 @@ export default function ClosingCta({ onCtaClick }: ClosingCtaProps) {
             </h2>
 
             <p className="text-brand-slate text-sm sm:text-base leading-relaxed max-w-xl font-medium">
-              We'll build you a free sample homepage customized for your exact service territory. No payment details, no sales calls, no pressure. If you like it, we hook up your domain and finish the job.
+              We'll review your local service territory and schedule a brief discovery call to map out your site layout and search rankings strategy. No pushy sales calls, no lock-in terms.
             </p>
 
             <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-4">
@@ -50,13 +50,13 @@ export default function ClosingCta({ onCtaClick }: ClosingCtaProps) {
                 variant="primary"
                 className="group flex items-center space-x-3 w-full sm:w-auto"
               >
-                <span>Get My Free Sample</span>
+                <span>Contact Us</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </div>
 
             <p className="text-[10px] font-mono text-brand-slate uppercase tracking-widest font-bold">
-              Review your live preview in 48 hours · $0 upfront
+              Expect a direct callback within 24 hours · Billed month-to-month
             </p>
           </div>
 

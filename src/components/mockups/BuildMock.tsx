@@ -1,155 +1,96 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Star, Shield, Phone, Mail, Award, CheckCircle } from "lucide-react";
+import React from "react";
+import { Star, Shield, Phone, Cpu, Settings, Code } from "lucide-react";
 
 export default function BuildMock() {
-  const [activeTab, setActiveTab] = useState<"home" | "services" | "reviews">("home");
-
   return (
-    <div className="w-full bg-white shadow-xl border border-brand-navy/10 overflow-hidden flex flex-col font-sans select-none text-brand-navy">
-      {/* Browser chrome header */}
-      <div className="bg-brand-offwhite border-b border-brand-navy/10 px-4 py-3 flex items-center space-x-2">
+    <div className="w-full bg-[#152238] border border-white/10 rounded-2xl overflow-hidden font-mono shadow-2xl relative select-none">
+      {/* Code Editor Header */}
+      <div className="bg-black/35 px-4 py-3 flex items-center justify-between border-b border-white/5">
         <div className="flex space-x-1.5">
-          <div className="w-3 h-3 rounded-full bg-red-400/80" />
-          <div className="w-3 h-3 rounded-full bg-yellow-400/80" />
-          <div className="w-3 h-3 rounded-full bg-green-400/80" />
+          <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+          <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+          <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
         </div>
-        <div className="bg-white border border-brand-navy/5 text-xs text-brand-slate text-center py-1.5 px-6 rounded-md flex-1 max-w-sm mx-auto font-mono flex items-center justify-center space-x-1.5">
-          <span className="text-emerald-500">🔒</span>
-          <span>apexelectrical.com</span>
-        </div>
+        <span className="text-[10px] text-white/50 tracking-wider flex items-center space-x-1.5">
+          <Code className="w-3.5 h-3.5 text-brand-copper" />
+          <span>apex-builder.config.json</span>
+        </span>
+        <Settings className="w-3.5 h-3.5 text-white/30" />
       </div>
 
-      {/* Embedded Website mock content */}
-      <div className="p-6 bg-brand-offwhite/30 flex-1 min-h-[320px] flex flex-col justify-between">
-        {/* Mock Navigation */}
-        <div className="flex justify-between items-center border-b border-brand-navy/5 pb-4 mb-4">
-          <span className="font-serif font-bold text-base tracking-tight flex items-center space-x-1">
-            <span className="text-brand-copper">⚡</span>
-            <span>Apex Electrical</span>
-          </span>
-          <div className="flex space-x-3 text-xs font-mono uppercase tracking-wider">
-            {(["home", "services", "reviews"] as const).map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`pb-1 cursor-pointer transition-colors duration-150 ${
-                  activeTab === tab
-                    ? "border-b border-brand-copper text-brand-copper font-semibold"
-                    : "text-brand-slate hover:text-brand-navy"
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
+      {/* Editor Content Area */}
+      <div className="p-6 grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+        
+        {/* Left Column: Config JSON */}
+        <div className="md:col-span-6 space-y-3 text-[10px] text-left text-white/60">
+          <div className="text-brand-copper font-bold">// INITIALIZE SITE DEPLOY</div>
+          <div>
+            <span className="text-white/40">1 </span>
+            <span className="text-emerald-400">"siteName"</span>: <span className="text-brand-copper">"Apex Electrical"</span>,
+          </div>
+          <div>
+            <span className="text-white/40">2 </span>
+            <span className="text-emerald-400">"industry"</span>: <span className="text-brand-copper">"Electrician Crew"</span>,
+          </div>
+          <div>
+            <span className="text-white/40">3 </span>
+            <span className="text-emerald-400">"status"</span>: <span className="text-brand-copper">"LIVE_PRODUCTION"</span>,
+          </div>
+          <div>
+            <span className="text-white/40">4 </span>
+            <span className="text-emerald-400">"pageSpeed"</span>: <span className="text-emerald-400">99</span>,
+          </div>
+          <div>
+            <span className="text-white/40">5 </span>
+            <span className="text-emerald-400">"sslCert"</span>: <span className="text-emerald-400">true</span>,
+          </div>
+          <div>
+            <span className="text-white/40">6 </span>
+            <span className="text-emerald-400">"features"</span>: [
+          </div>
+          <div className="pl-4">
+            <span className="text-white/40">7 </span><span className="text-brand-copper">"Google Reviews Feed"</span>,
+          </div>
+          <div className="pl-4">
+            <span className="text-white/40">8 </span><span className="text-brand-copper">"Click-To-Call Dialers"</span>,
+          </div>
+          <div className="pl-4">
+            <span className="text-white/40">9 </span><span className="text-brand-copper">"Lead Booking Terminal"</span>
+          </div>
+          <div>
+            <span className="text-white/40">10 </span>]
           </div>
         </div>
 
-        {/* Mock Dynamic Panel */}
-        <div className="flex-1 flex flex-col justify-center py-2 relative overflow-hidden">
-          <AnimatePresence mode="wait">
-            {activeTab === "home" && (
-              <motion.div
-                key="home"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.2 }}
-                className="space-y-4 text-left"
-              >
-                <div className="inline-flex items-center space-x-1 bg-brand-copper/10 text-brand-copper px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider">
-                  <Shield className="w-3.5 h-3.5" />
-                  <span>24/7 Emergency Dispatch</span>
-                </div>
-                <h4 className="font-serif text-2xl font-semibold leading-tight max-w-md">
-                  Fast, Safe Electrical Work In Your Local Area.
-                </h4>
-                <p className="text-brand-slate text-xs max-w-sm">
-                  Certified electricians for panels, wiring, and repairs. Safe work, flat-rate pricing, and prompt arrivals.
-                </p>
-                <div className="flex space-x-3">
-                  <div className="bg-brand-copper text-white text-[11px] font-mono uppercase tracking-wider px-4 py-2 font-semibold shadow-sm">
-                    Request Call Back
-                  </div>
-                  <div className="border border-brand-navy/10 text-brand-navy text-[11px] font-mono uppercase tracking-wider px-4 py-2 font-semibold flex items-center space-x-1">
-                    <Phone className="w-3 h-3" />
-                    <span>Call (555) 901-2099</span>
-                  </div>
-                </div>
-              </motion.div>
-            )}
+        {/* Right Column: Visual Layout Render Mock */}
+        <div className="md:col-span-6 bg-black/40 border border-white/5 rounded-xl p-4 flex flex-col justify-between space-y-4">
+          <div className="flex justify-between items-center pb-2 border-b border-white/5">
+            <span className="text-[9px] text-white/40 font-mono">LIVE PREVIEW</span>
+            <span className="text-[8px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded font-bold uppercase">
+              Secure SSL
+            </span>
+          </div>
 
-            {activeTab === "services" && (
-              <motion.div
-                key="services"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.2 }}
-                className="grid grid-cols-2 gap-3 text-left"
-              >
-                {[
-                  { title: "Panel Upgrades", desc: "100A to 200A service changes." },
-                  { title: "Troubleshooting", desc: "Locating short circuits fast." },
-                  { title: "EV Charger Install", desc: "Level 2 home charging setup." },
-                  { title: "Recessed Lighting", desc: "Sleek, modern ceiling fixtures." },
-                ].map((svc) => (
-                  <div
-                    key={svc.title}
-                    className="bg-white p-3 border border-brand-navy/5 shadow-sm space-y-1.5"
-                  >
-                    <div className="flex justify-between items-center">
-                      <span className="font-serif text-xs font-semibold">{svc.title}</span>
-                      <CheckCircle className="w-3.5 h-3.5 text-brand-copper" />
-                    </div>
-                    <p className="text-[10px] text-brand-slate leading-relaxed">{svc.desc}</p>
-                  </div>
-                ))}
-              </motion.div>
-            )}
+          <div className="space-y-2 text-left">
+            <div className="flex items-center space-x-1">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-2.5 h-2.5 fill-brand-copper text-brand-copper" />
+              ))}
+              <span className="text-[8px] text-white/50">(48 Reviews)</span>
+            </div>
+            <h4 className="font-display text-lg font-black uppercase tracking-wider text-white leading-none">
+              Apex Electrical
+            </h4>
+            <p className="text-[9px] text-white/60 leading-relaxed font-sans">
+              24/7 emergency panel upgrades & residential troubleshooting.
+            </p>
+          </div>
 
-            {activeTab === "reviews" && (
-              <motion.div
-                key="reviews"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.2 }}
-                className="space-y-3 text-left"
-              >
-                {[
-                  { name: "Robert K.", text: "Prompt response, solved my flickering lights issue in 30 mins. Highly recommend!", stars: 5 },
-                  { name: "Sarah L.", text: "Apex upgraded our panel. Clean work, passed inspection first try. Very professional.", stars: 5 },
-                ].map((rev, i) => (
-                  <div
-                    key={i}
-                    className="bg-white p-3 border border-brand-navy/5 shadow-sm space-y-1"
-                  >
-                    <div className="flex justify-between items-center">
-                      <span className="font-sans text-xs font-semibold">{rev.name}</span>
-                      <div className="flex text-amber-500">
-                        {[...Array(rev.stars)].map((_, idx) => (
-                          <Star key={idx} className="w-3 h-3 fill-amber-500" />
-                        ))}
-                      </div>
-                    </div>
-                    <p className="text-[10px] italic text-brand-slate leading-relaxed">"{rev.text}"</p>
-                  </div>
-                ))}
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-
-        {/* Mock Footer Trust */}
-        <div className="border-t border-brand-navy/5 pt-3 mt-3 flex justify-between items-center text-[10px] font-mono text-brand-slate uppercase tracking-wider">
-          <span className="flex items-center space-x-1">
-            <Award className="w-3.5 h-3.5 text-brand-copper" />
-            <span>Licensed & Insured</span>
-          </span>
-          <span>CO Lic #EL-90821</span>
+          <div className="bg-brand-copper text-white py-1.5 rounded-lg text-center text-[9px] font-bold tracking-widest uppercase">
+            CALL DISPATCH
+          </div>
         </div>
       </div>
     </div>

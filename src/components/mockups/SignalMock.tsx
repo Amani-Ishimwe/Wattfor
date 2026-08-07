@@ -1,177 +1,96 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { Search, MapPin, Star, Phone, Globe, Navigation } from "lucide-react";
+import React from "react";
+import { Star, MapPin, Award, Search, Compass } from "lucide-react";
 
 export default function SignalMock() {
-  const [searchText, setSearchText] = useState("");
-  const [showResults, setShowResults] = useState(false);
-  const targetText = "electrician near me";
-
-  useEffect(() => {
-    let index = 0;
-    const interval = setInterval(() => {
-      if (index < targetText.length) {
-        setSearchText((prev) => prev + targetText.charAt(index));
-        index++;
-      } else {
-        clearInterval(interval);
-        setTimeout(() => {
-          setShowResults(true);
-        }, 600);
-      }
-    }, 100);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <div className="w-full bg-white shadow-xl border border-brand-navy/10 overflow-hidden flex flex-col font-sans select-none text-brand-navy">
-      {/* Browser Bar */}
-      <div className="bg-brand-offwhite border-b border-brand-navy/10 px-4 py-3 flex items-center space-x-2">
+    <div className="w-full bg-[#152238] border border-white/10 rounded-2xl overflow-hidden font-mono shadow-2xl relative select-none">
+      {/* Header Bar */}
+      <div className="bg-black/35 px-4 py-3 flex items-center justify-between border-b border-white/5">
         <div className="flex space-x-1.5">
-          <div className="w-3 h-3 rounded-full bg-red-400/80" />
-          <div className="w-3 h-3 rounded-full bg-yellow-400/80" />
-          <div className="w-3 h-3 rounded-full bg-green-400/80" />
+          <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+          <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+          <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
         </div>
-        <div className="bg-white border border-brand-navy/5 text-xs text-brand-slate text-center py-1.5 px-6 rounded-md flex-1 max-w-sm mx-auto font-mono">
-          google.com/search
-        </div>
+        <span className="text-[10px] text-white/50 tracking-wider flex items-center space-x-1.5">
+          <Compass className="w-3.5 h-3.5 text-brand-copper" />
+          <span>local-seo-pack.grid</span>
+        </span>
+        <Search className="w-3.5 h-3.5 text-white/30" />
       </div>
 
-      <div className="p-5 bg-white space-y-4">
-        {/* Google Mock Search Box */}
-        <div className="relative flex items-center border border-brand-navy/15 rounded-full px-4 py-2.5 max-w-md mx-auto shadow-sm">
-          <Search className="w-4 h-4 text-brand-slate mr-2" />
-          <span className="text-sm font-sans flex-1 text-left min-h-5">
-            {searchText}
-            <span className="animate-ping text-brand-copper font-thin">|</span>
-          </span>
-          <div className="flex space-x-2 text-[10px] text-brand-slate font-mono uppercase">
-            <span>Enter</span>
+      {/* Main Stats Display */}
+      <div className="p-6 grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+        
+        {/* Left Column: Map Citation Grid */}
+        <div className="md:col-span-7 bg-black/40 border border-white/5 rounded-xl p-4 flex flex-col justify-between space-y-4">
+          <div className="flex justify-between items-center">
+            <span className="text-[9px] text-white/40">GEO RANKING RADIUS</span>
+            <span className="text-[8px] bg-brand-copper/20 text-brand-copper px-2 py-0.5 rounded font-bold">
+              100% COVERAGE
+            </span>
+          </div>
+
+          {/* Grid diagram representing target maps pack locations */}
+          <div className="grid grid-cols-5 gap-2 relative py-2">
+            {[...Array(25)].map((_, idx) => {
+              // Highlight centered clusters
+              const isCenter = idx === 12;
+              const isInner = [6, 7, 8, 11, 13, 16, 17, 18].includes(idx);
+              const rank = isCenter ? "1" : isInner ? "1" : "2";
+
+              return (
+                <div
+                  key={idx}
+                  className={`aspect-square rounded flex items-center justify-center text-[8px] font-bold border transition-all duration-300 ${
+                    isCenter
+                      ? "bg-brand-copper text-white border-brand-copper shadow-md scale-105"
+                      : isInner
+                      ? "bg-brand-copper/20 text-brand-copper border-brand-copper/30"
+                      : "bg-white/5 text-white/30 border-white/5"
+                  }`}
+                >
+                  {rank}
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="flex justify-between items-center text-[8px] text-white/50 border-t border-white/5 pt-2">
+            <span>CLIENT RADIAL RANGE: 15 MILES</span>
+            <span>RANKINGS SYNCED: DAILY</span>
           </div>
         </div>
 
-        {/* Results Container */}
-        {showResults && (
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="space-y-4 text-left"
-          >
-            {/* Map and local listings splits */}
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-3 border border-brand-navy/5 bg-brand-offwhite/20 p-3">
-              {/* Local List */}
-              <div className="md:col-span-3 space-y-3">
-                <div className="text-[11px] font-mono uppercase tracking-wider text-brand-slate border-b border-brand-navy/5 pb-1">
-                  📍 Local Pack Results
-                </div>
-
-                {/* Ranked #1: Wattfor Client */}
-                <motion.div
-                  initial={{ scale: 0.98 }}
-                  animate={{ scale: 1 }}
-                  className="bg-white p-3 border border-brand-copper/30 shadow-md relative overflow-hidden"
-                >
-                  {/* Top-Right Badge */}
-                  <span className="absolute top-0 right-0 bg-brand-copper text-white font-mono text-[8px] uppercase tracking-wider px-2 py-0.5 font-bold">
-                    #1 Ranked
-                  </span>
-                  
-                  <div className="space-y-1">
-                    <h5 className="font-serif text-sm font-bold flex items-center space-x-1 text-brand-navy">
-                      <span>Apex Electrical Services</span>
-                    </h5>
-                    <div className="flex items-center space-x-1.5">
-                      <span className="text-xs font-semibold text-brand-copper">5.0</span>
-                      <div className="flex text-amber-500">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="w-3 h-3 fill-amber-500 text-amber-500" />
-                        ))}
-                      </div>
-                      <span className="text-[10px] text-brand-slate">(84 reviews)</span>
-                    </div>
-                    <p className="text-[10px] text-brand-slate">Electrician · Denver, CO · Open 24 Hours</p>
-                    <p className="text-[10px] font-semibold text-brand-copper flex items-center space-x-1">
-                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse mr-1" />
-                      <span>Local SEO optimized by Wattfor</span>
-                    </p>
-                  </div>
-
-                  {/* Actions */}
-                  <div className="flex space-x-2 mt-3 pt-2.5 border-t border-brand-navy/5">
-                    <button className="flex-1 bg-brand-offwhite text-brand-navy py-1.5 px-2 border border-brand-navy/5 text-[9px] font-mono uppercase tracking-wider flex items-center justify-center space-x-1">
-                      <Globe className="w-3 h-3 text-brand-copper" />
-                      <span>Website</span>
-                    </button>
-                    <button className="flex-1 bg-brand-copper text-white py-1.5 px-2 text-[9px] font-mono uppercase tracking-wider flex items-center justify-center space-x-1">
-                      <Phone className="w-3 h-3" />
-                      <span>Call Now</span>
-                    </button>
-                  </div>
-                </motion.div>
-
-                {/* Unoptimized Competitors */}
-                {[
-                  { name: "Colorado Wire Masters", rating: "4.2", reviews: "21", trade: "Electrician", status: "Closed · Opens 8AM" },
-                  { name: "Denver Power Techs", rating: "3.9", reviews: "12", trade: "Electrician", status: "Open · Closes 5PM" },
-                ].map((comp, idx) => (
-                  <div key={idx} className="bg-white/60 p-2.5 border border-brand-navy/5 opacity-60 text-xs space-y-1">
-                    <h5 className="font-serif text-xs font-semibold text-brand-navy">{comp.name}</h5>
-                    <div className="flex items-center space-x-1.5">
-                      <span className="text-[10px] font-semibold text-brand-slate">{comp.rating}</span>
-                      <div className="flex text-amber-500/50">
-                        {[...Array(4)].map((_, i) => (
-                          <Star key={i} className="w-2.5 h-2.5 fill-amber-500/50 text-amber-500/50" />
-                        ))}
-                      </div>
-                      <span className="text-[9px] text-brand-slate">({comp.reviews})</span>
-                    </div>
-                    <p className="text-[9px] text-brand-slate">{comp.trade} · Denver · {comp.status}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Map View */}
-              <div className="md:col-span-2 relative bg-brand-navy/10 border border-brand-navy/5 min-h-45 flex items-center justify-center overflow-hidden">
-                {/* SVG Mock Map */}
-                <svg className="absolute inset-0 w-full h-full stroke-brand-navy/5 fill-none" viewBox="0 0 100 100" preserveAspectRatio="none">
-                  {/* Grid Lines/Streets */}
-                  <path d="M 0 20 L 100 20 M 0 50 L 100 50 M 0 80 L 100 80 M 30 0 L 30 100 M 70 0 L 70 100" strokeWidth="1.5" />
-                  <path d="M 0 0 L 100 100 M 100 0 L 0 100" strokeWidth="0.5" strokeDasharray="2,2" />
-                </svg>
-
-                {/* Map Pins */}
-                {/* Competitor Pin */}
-                <div className="absolute top-1/4 left-1/4 flex flex-col items-center opacity-40">
-                  <MapPin className="w-4 h-4 text-brand-slate" />
-                </div>
-                {/* Competitor Pin */}
-                <div className="absolute bottom-1/4 right-1/3 flex flex-col items-center opacity-40">
-                  <MapPin className="w-4 h-4 text-brand-slate" />
-                </div>
-
-                {/* Active Pin (Wattfor Client) */}
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.3, type: "spring" }}
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10 cursor-pointer"
-                >
-                  <span className="bg-brand-navy text-white text-[8px] font-mono py-0.5 px-1.5 border border-brand-copper/35 whitespace-nowrap mb-1">
-                    Apex (You)
-                  </span>
-                  <div className="relative">
-                    <MapPin className="w-7 h-7 text-brand-copper fill-brand-copper/10 filter drop-shadow" />
-                    <span className="absolute inset-0 w-7 h-7 rounded-full bg-brand-copper/20 animate-ping" />
-                  </div>
-                </motion.div>
-              </div>
+        {/* Right Column: Signal Stats */}
+        <div className="md:col-span-5 flex flex-col justify-between space-y-4 text-left">
+          
+          <div className="space-y-3">
+            <div className="text-brand-copper text-[10px] font-bold uppercase tracking-wider">// SIGNAL INTENSITY</div>
+            <div className="space-y-1">
+              <span className="text-[9px] text-white/40 block">LOCAL MAP PACK POSITION</span>
+              <span className="font-display text-2xl font-black text-white uppercase tracking-wider">RANK #1</span>
             </div>
-          </motion.div>
-        )}
+            <div className="space-y-1">
+              <span className="text-[9px] text-white/40 block">CITATIONS INDEXED</span>
+              <span className="font-display text-2xl font-black text-white uppercase tracking-wider">94 CITATIONS</span>
+            </div>
+          </div>
+
+          {/* Map pin bubble */}
+          <div className="bg-white/5 border border-white/5 p-3 rounded-lg flex items-center space-x-2.5">
+            <div className="w-7 h-7 bg-brand-copper rounded-full flex items-center justify-center text-white">
+              <MapPin className="w-3.5 h-3.5" />
+            </div>
+            <div>
+              <span className="text-[9px] text-white/80 font-bold block">Denver Metro Pack</span>
+              <span className="text-[8px] text-white/40 block font-mono">GBP: FULLY COMPLIANT</span>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </div>
   );

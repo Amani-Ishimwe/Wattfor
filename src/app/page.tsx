@@ -5,6 +5,7 @@ import Navigation from "../components/sections/Navigation";
 import Hero from "../components/sections/Hero";
 import Problem from "../components/sections/Problem";
 import Services from "../components/sections/Services";
+import Portfolio from "../components/sections/Portfolio";
 import BentoFeatures from "../components/sections/BentoFeatures";
 import BlueprintGallery from "../components/sections/BlueprintGallery";
 import Pricing from "../components/sections/Pricing";
@@ -36,19 +37,22 @@ export default function Home() {
         {/* Services alternating panels */}
         <Services onCtaClick={triggerModal} />
 
-        {/* New: Bento specifications list */}
+        {/* Portfolio section representing completed site builds */}
+        <Portfolio />
+
+        {/* Bento specifications list */}
         <BentoFeatures />
 
-        {/* New: Wireframe / blueprint showcase grid */}
+        {/* Wireframe / blueprint showcase grid */}
         <BlueprintGallery />
 
-        {/* New: Transparent side-by-side Pricing */}
+        {/* Transparent side-by-side Pricing */}
         <Pricing onCtaClick={triggerModal} />
 
-        {/* Testimonial slider */}
+        {/* Testimonial sliding marquee */}
         <Social />
 
-        {/* New: Interactive FAQ Accordions */}
+        {/* Interactive FAQ Accordions */}
         <Faq />
 
         {/* High contrast final CTA */}

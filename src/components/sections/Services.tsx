@@ -20,7 +20,7 @@ export default function Services({ onCtaClick }: ServicesProps) {
       eyebrow: "Website Development",
       headline: "The Build",
       description: "A high-speed, modern website built specifically for your trade. Featuring clean service menus, actual review feeds, clear booking forms, and absolute mobile polish — live in less than a week.",
-      cta: "Get My Free Sample",
+      cta: "Contact Us",
       mockup: <BuildMock />,
     },
     {
@@ -29,7 +29,7 @@ export default function Services({ onCtaClick }: ServicesProps) {
       eyebrow: "Local SEO & Optimization",
       headline: "The Signal",
       description: "Complete setup and weekly management of your Google Business Profile, local citations, and trade-specific keywords. When local prospects search '[your trade] near me', you show up at the top.",
-      cta: "Get My Free Sample",
+      cta: "Contact Us",
       mockup: <SignalMock />,
     },
     {
@@ -38,7 +38,7 @@ export default function Services({ onCtaClick }: ServicesProps) {
       eyebrow: "Hosting & Maintenance",
       headline: "The Upkeep",
       description: "Secure enterprise hosting, weekly automated content backups, active uptime monitoring, and layout updates. We handle the tech specs so you can focus on handling job sites.",
-      cta: "Get My Free Sample",
+      cta: "Contact Us",
       mockup: <UpkeepMock />,
     },
   ];

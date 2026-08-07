@@ -97,12 +97,12 @@ export default function Hero({ onCtaClick }: HeroProps) {
                 variant="primary"
                 className="group flex items-center space-x-3 w-full sm:w-auto"
               >
-                <span>Request Free Sample</span>
+                <span>Contact Us</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </div>
             <p className="text-[10px] font-mono text-brand-slate uppercase tracking-widest font-bold">
-              $0 Upfront · We build your sample first · No credit card
+              Flat-rate plans · No locked contracts · Fast 7-day delivery
             </p>
           </motion.div>
         </motion.div>

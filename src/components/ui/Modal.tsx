@@ -124,7 +124,7 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
                       Step {step} of 2
                     </span>
                     <h3 className="font-display text-4xl uppercase tracking-wider font-bold text-brand-navy mt-1">
-                      {step === 1 ? "Let's sketch it out" : "Where should we send it?"}
+                      {step === 1 ? "Let's connect" : "How can we reach you?"}
                     </h3>
                   </div>
                   <div className="flex space-x-2">
@@ -265,7 +265,7 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
                     <div className="bg-brand-navy/5 p-5 border-l-2 border-brand-copper text-brand-slate text-xs space-y-1.5 rounded-r-2xl">
                       <p className="font-bold text-brand-navy uppercase tracking-wider">What happens next?</p>
                       <p className="leading-relaxed">
-                        We build your free, functional homepage mockup based on your trade. Within 48 hours, we'll email you a secure link. Zero commitment.
+                        We will review your trade profile and contact you within 24 hours to schedule a 10-minute discovery call to scope your site build and search dashboard.
                       </p>
                     </div>
 
@@ -291,7 +291,7 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
                           </>
                         ) : (
                           <>
-                            <span>Request Free Sample</span>
+                            <span>Send Request</span>
                             <ChevronRight className="w-4 h-4" />
                           </>
                         )}
@@ -317,21 +317,21 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
                       Connection Established
                     </span>
                     <h3 className="font-display text-5xl uppercase tracking-wider font-bold text-brand-navy">
-                      Your sample is in queue.
+                      Request Received.
                     </h3>
                     <p className="text-brand-slate text-sm max-w-sm mx-auto leading-relaxed">
-                      Thank you, <span className="text-brand-navy font-bold">{formData.ownerName}</span>. We've routed <span className="text-brand-navy font-bold">{formData.businessName}</span>'s website project to our trade designers.
+                      Thank you, <span className="text-brand-navy font-bold">{formData.ownerName}</span>. We've routed your request to <span className="text-brand-navy font-bold">{formData.businessName}</span>'s trade coordinator.
                     </p>
                   </div>
 
                   {/* Faux technical read-out */}
                   <div className="bg-brand-navy text-brand-offwhite text-left font-mono text-xs p-5 rounded-2xl space-y-1 max-w-md mx-auto border border-white/5 opacity-90 select-none shadow-md">
                     <p className="text-brand-copper font-bold">⚡ TERMINAL STATUS: OK</p>
-                    <p className="text-white/40">// BUILD INITIATED FOR: {formData.tradeType}</p>
+                    <p className="text-white/40">// DISPATCH INITIATED FOR: {formData.tradeType}</p>
                     <p className="text-emerald-400">&gt; routing pipeline... complete</p>
                     <p className="text-emerald-400">&gt; establishing search nodes... sync</p>
-                    <p className="text-emerald-400">&gt; allocating designer... locked</p>
-                    <p className="text-white/40">// EXPECT SECURE LINK IN 24-48 HOURS</p>
+                    <p className="text-emerald-400">&gt; allocating coordinator... locked</p>
+                    <p className="text-white/40">// EXPECT PHONE SCHEDULER CALLBACK IN 24 HOURS</p>
                   </div>
 
                   <div className="pt-4">

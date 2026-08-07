@@ -73,3 +73,24 @@ body {
 .glow-copper-lg {
   box-shadow: 0 0 50px rgba(201, 114, 44, 0.25);
 }
+
+/* Infinite Marquee Scroll */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+

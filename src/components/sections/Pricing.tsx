@@ -110,7 +110,7 @@ export default function Pricing({ onCtaClick }: PricingProps) {
             No hidden retainers.
           </h2>
           <p className="text-brand-slate text-sm font-sans font-medium max-w-xl">
-            We build your free website sample first. You choose to select a plan and activate billing only after you approve the layout.
+            Flat rates with zero setup fees. We map out your local keyword signals and design layouts to convert local search clicks into real business phone calls.
           </p>
         </div>
 
