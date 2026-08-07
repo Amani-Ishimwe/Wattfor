@@ -56,7 +56,7 @@ export default function Social() {
   };
 
   return (
-    <section className="relative py-24 sm:py-32 bg-brand-offwhite border-t border-brand-navy/5 overflow-hidden">
+    <section id="reviews" className="relative py-24 sm:py-32 bg-brand-offwhite border-t border-brand-navy/5 overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Section Header */}

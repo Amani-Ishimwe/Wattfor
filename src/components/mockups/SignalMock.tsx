@@ -44,7 +44,7 @@ export default function SignalMock() {
         {/* Google Mock Search Box */}
         <div className="relative flex items-center border border-brand-navy/15 rounded-full px-4 py-2.5 max-w-md mx-auto shadow-sm">
           <Search className="w-4 h-4 text-brand-slate mr-2" />
-          <span className="text-sm font-sans flex-1 text-left min-h-[20px]">
+          <span className="text-sm font-sans flex-1 text-left min-h-5">
             {searchText}
             <span className="animate-ping text-brand-copper font-thin">|</span>
           </span>
@@ -135,7 +135,7 @@ export default function SignalMock() {
               </div>
 
               {/* Map View */}
-              <div className="md:col-span-2 relative bg-brand-navy/10 border border-brand-navy/5 min-h-[180px] flex items-center justify-center overflow-hidden">
+              <div className="md:col-span-2 relative bg-brand-navy/10 border border-brand-navy/5 min-h-45 flex items-center justify-center overflow-hidden">
                 {/* SVG Mock Map */}
                 <svg className="absolute inset-0 w-full h-full stroke-brand-navy/5 fill-none" viewBox="0 0 100 100" preserveAspectRatio="none">
                   {/* Grid Lines/Streets */}

@@ -27,8 +27,11 @@ export default function Navigation({ onCtaClick }: NavigationProps) {
 
   const navLinks = [
     { name: "Services", href: "#services" },
-    { name: "How It Works", href: "#how-it-works" },
-    { name: "Why Us", href: "#why-us" },
+    { name: "Specs", href: "#specs" },
+    { name: "Blueprints", href: "#blueprints" },
+    { name: "Pricing", href: "#pricing" },
+    { name: "Reviews", href: "#reviews" },
+    { name: "FAQ", href: "#faq" },
     { name: "Contact", href: "#contact" },
   ];
 
