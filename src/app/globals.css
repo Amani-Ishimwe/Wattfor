@@ -13,6 +13,9 @@
   --font-sans: 'Epilogue', sans-serif;
   --font-serif: 'Playfair Display', serif;
   --font-mono: 'JetBrains Mono', monospace;
+
+  /* Custom xs breakpoint — phones in landscape / larger phones */
+  --breakpoint-xs: 480px;
 }
 
 :root {
