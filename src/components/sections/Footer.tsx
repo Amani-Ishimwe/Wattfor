@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -75,6 +76,26 @@ export default function Footer() {
           </ul>
         </div>
 
+      </div>
+
+      {/* Giant WATTFOR Wordmark with Letter Hovers */}
+      <div className="max-w-7xl mx-auto px-6 py-8 border-b border-white/5 flex justify-center overflow-hidden select-none">
+        <div className="flex space-x-1 sm:space-x-3">
+          {"WATTFOR".split("").map((letter, i) => (
+            <motion.span
+              key={i}
+              whileHover={{
+                scale: 1.12,
+                y: -8,
+                color: "#C9722C",
+                transition: { type: "spring", stiffness: 350, damping: 10 },
+              }}
+              className="font-display text-6xl sm:text-[9rem] md:text-[13rem] uppercase font-black tracking-tighter text-white/5 cursor-default transition-colors duration-150 leading-none"
+            >
+              {letter}
+            </motion.span>
+          ))}
+        </div>
       </div>
 
       {/* Bottom Bar */}

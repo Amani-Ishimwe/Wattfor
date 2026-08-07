@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Star, Quote } from "lucide-react";
+import { Star } from "lucide-react";
 
 export default function Social() {
   const testimonials = [
@@ -11,6 +11,7 @@ export default function Social() {
       role: "Owner, Miller & Sons Electrical",
       location: "Denver, CO",
       trade: "Electrician",
+      image: "/images/profile_marcus.png",
     },
     {
       quote: "We went with their bundled setup. The website loads instantly on mobile and our local maps ranking went from non-existent to #1.",
@@ -18,6 +19,7 @@ export default function Social() {
       role: "Founder, Jenkins Plumbing & Gas",
       location: "Aurora, CO",
       trade: "Plumber",
+      image: "/images/profile_dave.png",
     },
     {
       quote: "We spent thousands on marketing agencies with zero calls. Wattfor sorted our local SEO, and our phone rang on day 3.",
@@ -25,6 +27,7 @@ export default function Social() {
       role: "Owner, Croft HVAC Solutions",
       location: "Lakewood, CO",
       trade: "HVAC Pro",
+      image: "/images/profile_steven.png",
     },
     {
       quote: "Flat-rate pricing, clean designs, and zero tech jargon. I can focus on repairing roofs while my website handles the bookings.",
@@ -32,6 +35,7 @@ export default function Social() {
       role: "Founder, Mitchell Roofing Crew",
       location: "Arvada, CO",
       trade: "Roofer",
+      image: "/images/profile_ray.png",
     },
     {
       quote: "Excellent communication and fast turnaround. They customized the layout to represent my trade and the local SEO is driving solid leads.",
@@ -39,6 +43,7 @@ export default function Social() {
       role: "Partner, Vance Brothers Electric",
       location: "Thornton, CO",
       trade: "Electrician",
+      image: "/images/profile_tony.png",
     },
   ];
 
@@ -91,13 +96,23 @@ export default function Social() {
 
               {/* Author Details */}
               <div className="flex justify-between items-end border-t border-brand-navy/5 pt-4">
-                <div className="text-left">
-                  <h4 className="font-display text-lg uppercase font-bold text-brand-navy tracking-wider leading-none">
-                    {test.name}
-                  </h4>
-                  <span className="text-[10px] text-brand-slate font-medium block mt-1">
-                    {test.role}
-                  </span>
+                <div className="flex items-center text-left">
+                  {/* Real Image Headshot */}
+                  <div className="w-10 h-10 rounded-full border border-brand-navy/10 overflow-hidden relative bg-brand-navy flex-shrink-0 mr-3">
+                    <img
+                      src={test.image}
+                      alt={test.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="font-display text-base uppercase font-bold text-brand-navy tracking-wider leading-none">
+                      {test.name}
+                    </h4>
+                    <span className="text-[9px] text-brand-slate font-medium block mt-1">
+                      {test.role}
+                    </span>
+                  </div>
                 </div>
                 <div className="text-right">
                   <span className="font-mono text-[9px] text-brand-copper uppercase tracking-wider font-bold block">

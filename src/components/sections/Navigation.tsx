@@ -32,7 +32,6 @@ export default function Navigation({ onCtaClick }: NavigationProps) {
     { name: "Pricing", href: "#pricing" },
     { name: "Reviews", href: "#reviews" },
     { name: "FAQ", href: "#faq" },
-    { name: "Contact", href: "#contact" },
   ];
 
   return (

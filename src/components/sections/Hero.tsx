@@ -46,14 +46,14 @@ export default function Hero({ onCtaClick }: HeroProps) {
         >
           {/* Avatar stack + Trust Badge */}
           <motion.div variants={itemVariants} className="inline-flex flex-col items-center space-y-3">
-            <div className="flex items-center -space-x-3">
-              {["#C9722C", "#152238", "#5B697B", "#C9722C"].map((color, i) => (
-                <div
-                  key={i}
-                  className="w-8 h-8 rounded-full border-2 border-brand-offwhite flex items-center justify-center text-[10px] font-mono text-white font-bold select-none shadow-sm"
-                  style={{ backgroundColor: color }}
-                >
-                  {["E", "P", "H", "R"][i]}
+            <div className="flex items-center -space-x-2">
+              {["profile_marcus.png", "profile_dave.png", "profile_steven.png", "profile_ray.png"].map((img, i) => (
+                <div key={i} className="w-8 h-8 rounded-full border-2 border-brand-offwhite overflow-hidden shadow-sm relative bg-brand-navy">
+                  <img
+                    src={`/images/${img}`}
+                    alt="Contractor Headshot"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               ))}
             </div>

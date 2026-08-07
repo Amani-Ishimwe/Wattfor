@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
 export default function Portfolio() {
   const projects = [
@@ -12,17 +12,7 @@ export default function Portfolio() {
       trade: "Electrician",
       metric: "+140% Call Volume",
       metricDesc: "Increased monthly inbound calls via GBP pack rankings within 60 days.",
-      layout: (
-        <svg className="w-full h-32 stroke-white/20 fill-none" viewBox="0 0 100 60">
-          <rect x="5" y="5" width="90" height="50" rx="2" />
-          <line x1="5" y1="18" x2="95" y2="18" />
-          <circle cx="15" cy="11" r="2" className="text-brand-copper" fill="currentColor" />
-          <rect x="10" y="24" width="30" height="24" rx="1" strokeDasharray="1,1" />
-          <line x1="48" y1="26" x2="88" y2="26" strokeWidth="2" className="stroke-brand-copper" />
-          <line x1="48" y1="34" x2="78" y2="34" />
-          <line x1="48" y1="40" x2="68" y2="40" />
-        </svg>
-      ),
+      image: "/images/apex_electrical_portfolio.png",
     },
     {
       title: "Mitchell Roofing Crew",
@@ -30,15 +20,7 @@ export default function Portfolio() {
       trade: "Roofer",
       metric: "#1 Local Pack Slot",
       metricDesc: "Ranked #1 for local roofing searches in immediate Denver metro suburbs.",
-      layout: (
-        <svg className="w-full h-32 stroke-white/20 fill-none" viewBox="0 0 100 60">
-          <rect x="5" y="5" width="90" height="50" rx="2" />
-          <line x1="5" y1="18" x2="95" y2="18" />
-          <circle cx="15" cy="11" r="2" className="text-brand-copper" fill="currentColor" />
-          <path d="M 20 48 L 50 24 L 80 48" strokeWidth="2" className="stroke-brand-copper" />
-          <circle cx="50" cy="24" r="3" />
-        </svg>
-      ),
+      image: "/images/mitchell_roofing_portfolio.png",
     },
     {
       title: "Vance Brothers Plumbing",
@@ -46,16 +28,7 @@ export default function Portfolio() {
       trade: "Plumber",
       metric: "98 PageSpeed Score",
       metricDesc: "Optimized landing speeds leading to direct conversion rate increases.",
-      layout: (
-        <svg className="w-full h-32 stroke-white/20 fill-none" viewBox="0 0 100 60">
-          <rect x="5" y="5" width="90" height="50" rx="2" />
-          <line x1="5" y1="18" x2="95" y2="18" />
-          <circle cx="15" cy="11" r="2" className="text-brand-copper" fill="currentColor" />
-          <circle cx="50" cy="36" r="10" strokeDasharray="2,2" />
-          <circle cx="50" cy="36" r="6" />
-          <line x1="50" y1="36" x2="56" y2="30" strokeWidth="2" className="stroke-brand-copper" />
-        </svg>
-      ),
+      image: "/images/vance_plumbing_portfolio.png",
     },
     {
       title: "Summit HVAC Solutions",
@@ -63,16 +36,7 @@ export default function Portfolio() {
       trade: "HVAC Pro",
       metric: "Zero Ads Retained",
       metricDesc: "Swapped expensive Google Ads spend for organic local map leads.",
-      layout: (
-        <svg className="w-full h-32 stroke-white/20 fill-none" viewBox="0 0 100 60">
-          <rect x="5" y="5" width="90" height="50" rx="2" />
-          <line x1="5" y1="18" x2="95" y2="18" />
-          <circle cx="15" cy="11" r="2" className="text-brand-copper" fill="currentColor" />
-          <rect x="15" y="24" width="20" height="8" rx="1" />
-          <rect x="45" y="24" width="20" height="8" rx="1" />
-          <rect x="15" y="38" width="50" height="10" rx="1" strokeDasharray="1,1" />
-        </svg>
-      ),
+      image: "/images/summit_hvac_portfolio.png",
     },
   ];
 
@@ -105,12 +69,15 @@ export default function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="bg-black/30 border border-white/5 p-8 rounded-[2.5rem] flex flex-col justify-between space-y-6 hover:border-brand-copper/30 transition-all duration-300 group"
+              className="bg-black/30 border border-white/5 p-6 sm:p-8 rounded-[2.5rem] flex flex-col justify-between space-y-6 hover:border-brand-copper/30 transition-all duration-300 group"
             >
               {/* Browser mockup layout */}
-              <div className="bg-brand-navy/60 border border-white/5 rounded-2xl p-4 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(white_1px,transparent_1px)] [background-size:16px_16px]" />
-                {proj.layout}
+              <div className="bg-brand-navy border border-white/10 rounded-2xl overflow-hidden aspect-[16/10] relative shadow-md bg-black/40">
+                <img
+                  src={proj.image}
+                  alt={proj.title}
+                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                />
               </div>
 
               {/* Title & Info */}

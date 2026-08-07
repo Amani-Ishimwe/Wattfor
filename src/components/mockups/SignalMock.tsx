@@ -5,7 +5,7 @@ import { Star, MapPin, Award, Search, Compass } from "lucide-react";
 
 export default function SignalMock() {
   return (
-    <div className="w-full bg-[#152238] border border-white/10 rounded-2xl overflow-hidden font-mono shadow-2xl relative select-none">
+    <div className="w-full bg-brand-navy border border-white/10 rounded-2xl overflow-hidden font-mono shadow-2xl relative select-none">
       {/* Header Bar */}
       <div className="bg-black/35 px-4 py-3 flex items-center justify-between border-b border-white/5">
         <div className="flex space-x-1.5">
