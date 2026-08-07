@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-navy: #152238;
+  --color-brand-copper: #C9722C;
+  --color-brand-copper-hover: #B05C1F;
+  --color-brand-offwhite: #F3F2EE;
+  --color-brand-slate: #5B697B;
+  --color-brand-border: rgba(21, 34, 56, 0.08);
+  
+  --font-display: 'Big Shoulders Display', sans-serif;
+  --font-sans: 'Epilogue', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  background-color: #F3F2EE;
+  color: #152238;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-brand-offwhite);
+  color: var(--color-brand-navy);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-offwhite);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-slate);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-navy);
+}
+
+/* Glassmorphism spec-card overlay */
+.spec-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(21, 34, 56, 0.06);
+}
+
+.spec-card-dark {
+  background: rgba(21, 34, 56, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Glow effects */
+.glow-copper {
+  box-shadow: 0 0 25px rgba(201, 114, 44, 0.15);
+}
+
+.glow-copper-lg {
+  box-shadow: 0 0 50px rgba(201, 114, 44, 0.25);
 }
