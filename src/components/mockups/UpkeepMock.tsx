@@ -46,7 +46,7 @@ export default function UpkeepMock() {
               <span className="text-white/40">[10:04:13]</span> DATABASE: Backups generated successfully
             </div>
             <div className="text-emerald-400 flex items-center space-x-1">
-              <Check className="w-3 h-3 flex-shrink-0" />
+              <Check className="w-3 h-3 shrink-0" />
               <span>[10:04:14] UPTIME MONITOR: 100% (No shifts measured)</span>
             </div>
           </div>

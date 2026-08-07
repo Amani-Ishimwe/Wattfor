@@ -27,7 +27,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden bg-brand-navy text-white">
+    <section className="relative h-[100dvh] flex flex-col overflow-hidden bg-brand-navy text-white">
       {/* Full-bleed background image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -40,7 +40,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
       <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent" />
 
       {/* Main content — vertically centred, fills viewport */}
-      <div className="relative z-10 flex-1 flex items-center w-full px-5 sm:px-10 lg:px-16 py-28 sm:py-32">
+      <div className="relative z-10 flex-1 flex items-center w-full px-5 sm:px-10 lg:px-16 pt-24 pb-6 sm:pt-28 sm:pb-8">
         <div className="max-w-7xl mx-auto w-full">
           <motion.div
             variants={containerVariants}
