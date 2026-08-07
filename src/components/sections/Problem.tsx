@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Problem() {
   return (
-    <section className="relative py-24 sm:py-32 bg-brand-offwhite overflow-hidden">
+    <section className="relative py-12 sm:py-16 bg-brand-offwhite overflow-hidden">
       <div className="max-w-4xl mx-auto px-6 text-center space-y-8">
         {/* Eyebrow */}
         <motion.div

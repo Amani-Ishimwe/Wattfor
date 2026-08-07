@@ -51,7 +51,7 @@ export default function Social() {
   const marqueeList = [...testimonials, ...testimonials];
 
   return (
-    <section id="reviews" className="relative py-24 sm:py-32 bg-brand-offwhite border-t border-brand-navy/5 overflow-hidden scroll-mt-24">
+    <section id="reviews" className="relative py-12 sm:py-16 bg-brand-offwhite border-t border-brand-navy/5 overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6 mb-16">
         {/* Section Header */}
         <div className="max-w-2xl text-left space-y-4">

@@ -19,7 +19,7 @@ export default function ClosingCta({ onCtaClick }: ClosingCtaProps) {
   ];
 
   return (
-    <section id="contact" className="bg-brand-offwhite py-16 sm:py-24 px-6 scroll-mt-24">
+    <section id="contact" className="bg-brand-offwhite py-10 sm:py-14 px-6 scroll-mt-24">
       <div className="relative bg-brand-navy text-white py-16 sm:py-20 px-8 sm:px-12 overflow-hidden rounded-[2.5rem] border border-white/5 max-w-6xl mx-auto shadow-2xl">
         {/* High density Circuit Line Background */}
         <CircuitBg opacity={0.16} color="dark" />

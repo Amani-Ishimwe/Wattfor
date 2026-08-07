@@ -98,7 +98,7 @@ export default function BlueprintGallery() {
   ];
 
   return (
-    <section id="blueprints" className="relative py-20 sm:py-24 bg-brand-offwhite scroll-mt-24">
+    <section id="blueprints" className="relative py-12 sm:py-16 bg-brand-offwhite scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6 space-y-16">
         {/* Header */}
         <div className="max-w-xl text-left space-y-4">

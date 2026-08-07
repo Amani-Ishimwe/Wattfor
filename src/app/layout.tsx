@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Wattfor — Premium Websites & Local SEO for Trade Contractors",
-  description: "Wattfor builds professional, high-converting websites and manages local search presence for electricians, plumbers, HVAC pros, and roofers. Start with a $0 upfront free sample.",
+  description: "Wattfor builds professional, high-converting websites and manages local search presence for electricians, plumbers, HVAC pros, and roofers. Flat rates and zero setup fees.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -13,7 +13,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Epilogue:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Big+Shoulders+Display:wght@100..900&family=Epilogue:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
           rel="stylesheet"
         />
       </head>

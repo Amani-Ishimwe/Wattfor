@@ -12,7 +12,7 @@ export default function Portfolio() {
       trade: "Electrician",
       metric: "+140% Call Volume",
       metricDesc: "Increased monthly inbound calls via GBP pack rankings within 60 days.",
-      image: "/images/apex_electrical_portfolio.png",
+      image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80",
     },
     {
       title: "Mitchell Roofing Crew",
@@ -20,7 +20,7 @@ export default function Portfolio() {
       trade: "Roofer",
       metric: "#1 Local Pack Slot",
       metricDesc: "Ranked #1 for local roofing searches in immediate Denver metro suburbs.",
-      image: "/images/mitchell_roofing_portfolio.png",
+      image: "https://images.unsplash.com/photo-1635424710928-0544e8512eae?auto=format&fit=crop&w=800&q=80",
     },
     {
       title: "Vance Brothers Plumbing",
@@ -28,7 +28,7 @@ export default function Portfolio() {
       trade: "Plumber",
       metric: "98 PageSpeed Score",
       metricDesc: "Optimized landing speeds leading to direct conversion rate increases.",
-      image: "/images/vance_plumbing_portfolio.png",
+      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80",
     },
     {
       title: "Summit HVAC Solutions",
@@ -36,12 +36,12 @@ export default function Portfolio() {
       trade: "HVAC Pro",
       metric: "Zero Ads Retained",
       metricDesc: "Swapped expensive Google Ads spend for organic local map leads.",
-      image: "/images/summit_hvac_portfolio.png",
+      image: "https://images.unsplash.com/photo-1585338107529-13afc5f02586?auto=format&fit=crop&w=800&q=80",
     },
   ];
 
   return (
-    <section id="portfolio" className="relative py-24 sm:py-32 bg-brand-navy text-white overflow-hidden scroll-mt-24">
+    <section id="portfolio" className="relative py-12 sm:py-16 bg-brand-navy text-white overflow-hidden scroll-mt-24">
       {/* Subtle radial glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(201,114,44,0.06),transparent_70%)]" />
 

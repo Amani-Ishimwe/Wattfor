@@ -23,7 +23,7 @@ export default function BentoFeatures() {
   ];
 
   return (
-    <section id="specs" className="relative py-20 sm:py-24 bg-brand-offwhite border-t border-brand-navy/5 scroll-mt-24">
+    <section id="specs" className="relative py-12 sm:py-16 bg-brand-offwhite border-t border-brand-navy/5 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6 space-y-12">
         {/* Header */}
         <div className="max-w-xl text-left space-y-4">
